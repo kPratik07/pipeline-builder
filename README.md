@@ -12,8 +12,38 @@ A React-based drag-and-drop pipeline builder with Node.js backend for creating a
 
 ## Tech Stack
 
-**Frontend:** React 18, React Flow, Zustand, Tailwind CSS  
-**Backend:** Node.js, Express, CORS
+### Frontend
+- **React 18.2.0** - UI framework
+- **React Flow 11.8.3** - Node-based UI library
+- **Zustand 4.4.0** - State management
+- **Tailwind CSS 3** - Styling
+- **PostCSS & Autoprefixer** - CSS processing
+
+### Backend
+- **Node.js** - Runtime
+- **Express 4.18.2** - Web framework
+- **CORS** - Cross-origin resource sharing
+
+## Project Structure
+
+```
+pipeline-builder/
+├── frontend/
+│   ├── src/
+│   │   ├── nodes/          (9 node type components)
+│   │   ├── App.js          (Main component)
+│   │   ├── ui.js           (React Flow canvas)
+│   │   ├── toolbar.js      (Node buttons)
+│   │   ├── submit.js       (Pipeline submission)
+│   │   ├── store.js        (Zustand state)
+│   │   └── index.css       (Tailwind directives)
+│   ├── package.json
+│   └── tailwind.config.js
+├── backend/
+│   ├── server.js           (Express server)
+│   └── package.json
+└── README.md
+```
 
 ## Quick Start
 
@@ -21,7 +51,7 @@ A React-based drag-and-drop pipeline builder with Node.js backend for creating a
 ```bash
 cd frontend
 npm install
-npm start
+REACT_APP_API_URL=http://localhost:8000 npm start
 ```
 
 ### Backend
@@ -30,6 +60,11 @@ cd backend
 npm install
 npm start
 ```
+
+## API Endpoints
+
+- **GET /** - Health check (`{"Ping":"Pong"}`)
+- **POST /pipelines/parse** - Validate pipeline (returns `num_nodes`, `num_edges`, `is_dag`)
 
 ## Deployment
 
