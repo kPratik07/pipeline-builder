@@ -176,3 +176,7 @@ Uses Kahn's algorithm for topological sort:
 - Pipeline save/load
 - Multiple pipeline management
 - Advanced validation rules
+
+---
+
+Made with ❤️ by Pratik Raj
